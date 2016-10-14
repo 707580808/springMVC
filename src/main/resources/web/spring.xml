@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.guava.test2"></context:component-scan>
+    <context:component-scan base-package="com.spring">
+        <context:include-filter type="assignable" expression="com.spring.Performer"/>
+    </context:component-scan>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <!--<bean id="qwe" class="com.spring.Juggler">-->
+    <!--</bean>-->
+    <!--<bean id="song" class="com.spring.Song">-->
+    <!--</bean>-->
+    <!--<bean id="zq" class="com.spring.Storage">-->
+    <!--</bean>-->
+    <context:component-scan base-package="com.test.sprin.aop"/>
+
+    <aop:config  proxy-target-class="true">
+        <aop:aspect ref="magician">
+            <aop:pointcut id="thinking"
+                          expression="execution(* com.test.sprin.aop.Thinker.think(String))
+                       and args(thoughts) " />
+             <aop:before  pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts"/>
+        </aop:aspect>
+
+
+
+    </aop:config>
+    <aop:aspectj-autoproxy/>
+    <aop:config >
+
+        <!--<aop:aspect ref="audience">-->
+            <!--&lt;!&ndash;定义切点&ndash;&gt;-->
+            <!--<aop:pointcut id="performance" expression="execution(* com.spring.Song.performer()) " />-->
+            <!--<aop:before pointcut-ref="performance"  method="before"/>-->
+            <!--<aop:around  pointcut-ref="performance" method="around"/>-->
+            <!--<aop:after pointcut-ref="performance"  method="after"/>-->
+        <!--</aop:aspect>-->
+        <aop:aspect>
+            <aop:declare-parents types-matching="com.spring.Performer+" implement-interface="com.spring.Contestant"
+                                 default-impl="com.spring.ContestantDelegate"/>
+
+        </aop:aspect>
+    </aop:config>
+<bean  class="com.google.common.eventbus.EventBus"/>
+</beans>
