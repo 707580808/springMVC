@@ -12,6 +12,7 @@ import java.math.BigDecimal;
  * Date：2016/10/12
  */
 @Component
+
 public class MailService {
 
     public void sendPaymentEmail( Integer b,BigDecimal a){
