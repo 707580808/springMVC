@@ -5,6 +5,7 @@ import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +18,7 @@ import java.util.Map;
  */
 public class TestGuavaSplitter {
     public static void main(String[] args ){
-        System.out.println(Splitter.on("|").trimResults().split("   wegduywe|pojiedo|edew    "));
+     /*   System.out.println(Splitter.on("|").trimResults().split("   wegduywe|pojiedo|edew    "));
         Splitter splitter=Splitter.on("|");
         splitter.trimResults();
         Iterable<String> strings=splitter.split("wef|wef|WE    ")  ;
@@ -28,6 +29,11 @@ public class TestGuavaSplitter {
         System.out.println(splitMap.get("Washington D.C"));
         System.out.println(Strings.padEnd("foo",6,'x'));
         CharMatcher cm = CharMatcher.JAVA_DIGIT.or(CharMatcher.WHITESPACE);
-        System.out.println(cm.retainFrom("asihdidhe11saxnak111    asiuhxi"));
+        System.out.println(cm.retainFrom("asihdidhe11saxnak111    asiuhxi"));*/
+        System.out.println(new Date());
+        Date date=new Date();
+        date.setTime(date.getTime()+780*60*1000);
+        System.out.println(date);
+
     }
 }

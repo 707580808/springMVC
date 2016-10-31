@@ -26,7 +26,7 @@ public class TestGuavaJoiner {
         list.add("oijxdwo");
         list.add("oijxdwo");
         list.add("oijxdwo");
-     String s=  Joiner.on("|").useForNull("rjfi").join(1,"rfrfdv","srfwer");
+     String s=  Joiner.on("|").join(list);
         Joiner joiner=Joiner.on("|").useForNull("null");
         StringBuilder stringBuilder=new StringBuilder();
          joiner.appendTo(stringBuilder,"wedw","efij","ferf");
