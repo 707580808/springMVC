@@ -36,6 +36,15 @@ public class mvcController {
         return "test";
 */
     }
+    @RequestMapping("/user/home")
+    public ModelAndView toUserHome(Model model) {
+
+        return  new ModelAndView("userhome");
+       /* model.addAttribute("greeting", "Hello Spring MVC");
+
+        return "test";
+*/
+    }
     @RequestMapping("/login")
     public ModelAndView hello(@Valid User user , BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
@@ -46,11 +55,18 @@ public class mvcController {
             }
             return new  ModelAndView("login");
         }
-        String username = user.getUsername();
-        String password = user.getPassword();
-        String a="test";
-        String s="login";
-        return new  ModelAndView("test");
+       try {
+           String username = user.getUsername();
+
+           String password = user.getPassword();
+           String a = "test";
+           String s = "login";
+           user=service.dologin(username,password);
+           request.setAttribute("user",user);
+           return new ModelAndView("userhome");
+       }catch (Exception e){
+           return new ModelAndView("login");
+       }
      /*   return  service.dologin(username,password,s,a);*/
        /* model.addAttribute("greeting", "Hello Spring MVC");
 

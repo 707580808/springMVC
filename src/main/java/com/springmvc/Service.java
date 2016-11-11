@@ -12,14 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @org.springframework.stereotype.Service
 public class Service {
-    public ModelAndView dologin(String username, String password, String s, String a) {
-      if (username==null||"".equals(username)){
-          return new  ModelAndView(s,"error","用户名为空");
-      }
-
-        if (password==null||"".equals(password)){
-            return new  ModelAndView(s,"error","密码为空");
-        }
-        return new  ModelAndView(a);
+    public User dologin(String username, String password) {
+     User user=new User();
+        user.setPassword(password);
+        user.setUsername(username);
+        user.setQq("70787786");
+        return user;
     }
 }

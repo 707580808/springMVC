@@ -22,5 +22,10 @@
         <!-- 后缀 -->
         <property name="suffix" value=".jsp" />
     </bean>
-
+<mvc:interceptors>
+    <mvc:interceptor>
+        <mvc:mapping path="/user/**"/>
+        <bean class="com.springmvc.HandIntercepter"></bean>
+    </mvc:interceptor>
+</mvc:interceptors>
 </beans>

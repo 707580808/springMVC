@@ -44,7 +44,6 @@
     <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.javacc:javacc:5.0" level="project" />
     <orderEntry type="library" name="Maven: com.101tec:zkclient:0.8" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:jsp-api:2.0.public_draft" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-validator:5.2.2.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
