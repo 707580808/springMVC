@@ -21,7 +21,7 @@ import java.util.List;
  */
 @Controller
 
-public class mvcController {
+public class mvcController extends BaseController{
     @Resource
     private Service service;
     @Resource
@@ -30,43 +30,48 @@ public class mvcController {
     @RequestMapping("/index")
     public ModelAndView test(Model model) {
 
-       return  new ModelAndView("login");
+        return new ModelAndView("login");
        /* model.addAttribute("greeting", "Hello Spring MVC");
-
         return "test";
 */
     }
+    @RequestMapping("exception")
+ public void throwException() throws MyException {
+     throw new MyException("异常");
+ }
     @RequestMapping("/user/home")
     public ModelAndView toUserHome(Model model) {
 
-        return  new ModelAndView("userhome");
+        return new ModelAndView("userhome");
        /* model.addAttribute("greeting", "Hello Spring MVC");
 
         return "test";
 */
     }
+
     @RequestMapping("/login")
-    public ModelAndView hello(@Valid User user , BindingResult bindingResult) {
-        if (bindingResult.hasErrors()){
-            List <FieldError> list=bindingResult.getFieldErrors();
-            for (FieldError f:
-                 list) {request.setAttribute("ERR_"+f.getField(),f.getDefaultMessage());
+    public ModelAndView hello(@Valid User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            List<FieldError> list = bindingResult.getFieldErrors();
+            for (FieldError f :
+                    list) {
+                request.setAttribute("ERR_" + f.getField(), f.getDefaultMessage());
 
             }
-            return new  ModelAndView("login");
+            return new ModelAndView("login");
         }
-       try {
-           String username = user.getUsername();
+        try {
+            String username = user.getUsername();
 
-           String password = user.getPassword();
-           String a = "test";
-           String s = "login";
-           user=service.dologin(username,password);
-           request.setAttribute("user",user);
-           return new ModelAndView("userhome");
-       }catch (Exception e){
-           return new ModelAndView("login");
-       }
+            String password = user.getPassword();
+            String a = "test";
+            String s = "login";
+            user = service.dologin(username, password);
+            request.setAttribute("user", user);
+            return new ModelAndView("userhome");
+        } catch (Exception e) {
+            return new ModelAndView("login");
+        }
      /*   return  service.dologin(username,password,s,a);*/
        /* model.addAttribute("greeting", "Hello Spring MVC");
 
