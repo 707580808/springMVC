@@ -1,4 +1,4 @@
-package com.springmvc;
+package com.springmvc.inandexception;
 
 import com.springmvc.validator.Between;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -14,8 +14,9 @@ import java.io.Serializable;
  * Date：2016/11/7
  */
 public class User implements Serializable {
-    @Between(min = 10,max = 29)
+    @NotEmpty
     private String username;
+    @NotEmpty
     @Pattern(regexp = "[0-9a-zA-Z]{6,30}",message = "密码是6-30个字符，必须是字母和数字的组合")
     private String password;
     private String qq;

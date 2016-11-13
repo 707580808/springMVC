@@ -1,4 +1,4 @@
-package com.springmvc;
+package com.springmvc.inandexception;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;

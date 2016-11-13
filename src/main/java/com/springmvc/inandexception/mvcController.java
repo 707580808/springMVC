@@ -1,4 +1,4 @@
-package com.springmvc;
+package com.springmvc.inandexception;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +27,7 @@ public class mvcController extends BaseController{
     @Resource
     private HttpServletRequest request;
 
-    @RequestMapping("/index")
+    @RequestMapping("/loginPage")
     public ModelAndView test(Model model) {
 
         return new ModelAndView("login");
@@ -35,11 +35,11 @@ public class mvcController extends BaseController{
         return "test";
 */
     }
-    @RequestMapping("exception")
+    @RequestMapping("/exception")
  public void throwException() throws MyException {
      throw new MyException("异常");
  }
-    @RequestMapping("/user/home")
+    @RequestMapping("/user")
     public ModelAndView toUserHome(Model model) {
 
         return new ModelAndView("userhome");

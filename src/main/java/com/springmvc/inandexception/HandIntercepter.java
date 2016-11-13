@@ -1,4 +1,4 @@
-package com.springmvc;
+package com.springmvc.inandexception;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,7 +14,7 @@ public class HandIntercepter implements HandlerInterceptor {
         System.out.println("pre");
         Object u=httpServletRequest.getSession().getAttribute("username");
         if (u==null){
-            httpServletResponse.sendRedirect("springmvc/index.html");
+            httpServletResponse.sendRedirect("loginPage.html");
             return false;
         }
         return true;

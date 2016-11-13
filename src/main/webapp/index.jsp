@@ -8,8 +8,8 @@
 </head>
 <body>
  <div style="margin: 0 auto; padding-top: 100px;font-size: 18px ;" align="center">
-     <p><a href=/index.html">登录</a></p>
-     <p><a href="/user/home.html">用户中心</a></p>
+     <p><a href="loginPage.html">登录</a></p>
+     <p><a href="user.html">用户中心</a></p>
      <p><a href="exception.html">触发异常</a></p>
 
  </div>

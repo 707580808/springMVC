@@ -1,4 +1,4 @@
-package com.springmvc;
+package com.springmvc.inandexception;
 
 /**
  * Created by zhuqiang on 16/11/10.
