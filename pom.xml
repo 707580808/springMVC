@@ -6,7 +6,12 @@
 
   <groupId>spring</groupId>
   <artifactId>springmvc</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>message</module>
+    <module>springmvcs</module>
+  </modules>
   <dependencies>
     <!-- Spring -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
