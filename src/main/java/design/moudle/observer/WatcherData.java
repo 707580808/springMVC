@@ -53,9 +53,7 @@ public class WatcherData implements Subject {
 
         arrayList.remove(o);
     }
-
     }
-
     public void notifyObserver() {
        for (Observer observer:arrayList){
            observer.update(this.getTem(),this.getPre(),this.getTem());
