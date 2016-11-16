@@ -22,8 +22,8 @@ import java.util.List;
  */
 @Controller
 public class mvcController extends BaseController{
-    @Resource
-    private Service service;
+   /* @Resource
+    private Service service;*/
     @Resource
     private HttpServletRequest request;
 
