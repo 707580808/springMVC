@@ -1,4 +1,4 @@
-package zookeeper.ZKclient;
+package com.zookeeper.ZKclient;
 
 import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.serialize.SerializableSerializer;

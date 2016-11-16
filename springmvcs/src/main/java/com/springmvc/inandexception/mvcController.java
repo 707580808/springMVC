@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import javax.xml.ws.Service;
 import java.util.List;
 
 /**
@@ -20,7 +21,6 @@ import java.util.List;
  * Date：2016/9/14
  */
 @Controller
-
 public class mvcController extends BaseController{
     @Resource
     private Service service;
@@ -64,9 +64,9 @@ public class mvcController extends BaseController{
             String username = user.getUsername();
 
             String password = user.getPassword();
-            String a = "test";
+            String a = "com/test";
             String s = "login";
-            user = service.dologin(username, password);
+//            user = service.dologin(username, password);
             request.setAttribute("user", user);
             return new ModelAndView("userhome");
         } catch (Exception e) {

@@ -21,7 +21,7 @@ public class ZookeeperTest2 implements Watcher{
         countDownLatch.await();
         long sessionId=zooKeeper.getSessionId();
         byte[] passwd=zooKeeper.getSessionPasswd();
-        zooKeeper=new ZooKeeper("192.168.10.128:2181", 5000, new ZookeeperTest2(),1L,"test".getBytes());
+        zooKeeper=new ZooKeeper("192.168.10.128:2181", 5000, new ZookeeperTest2(),1L, "com/test".getBytes());
         zooKeeper=new ZooKeeper("192.168.10.128:2181", 5000, new ZookeeperTest2(),sessionId,passwd);
         Thread.sleep(Integer.MAX_VALUE);
     }

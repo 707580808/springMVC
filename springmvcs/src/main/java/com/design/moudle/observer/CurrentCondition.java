@@ -1,4 +1,4 @@
-package design.moudle.observer;
+package com.design.moudle.observer;
 
 /**
  * Created by zhuqiang on 16/10/23.

@@ -1,4 +1,4 @@
-package design.moudle.observer;
+package com.design.moudle.observer;
 
 import org.springframework.util.Base64Utils;
 

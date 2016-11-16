@@ -1,4 +1,4 @@
-package think.in.java;
+package com.think.in.java;
 
 /**
  * Created by zhuqiang on 16/10/20.

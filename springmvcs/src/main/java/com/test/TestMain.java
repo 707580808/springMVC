@@ -1,4 +1,4 @@
-package test;
+package com.test;
 
 /**
  * 业务功能名称
